@@ -54,7 +54,7 @@ class Home extends StatelessWidget {
                         title: Text(
                           headerItems[index].title,
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       );
@@ -80,18 +80,8 @@ class Home extends StatelessWidget {
               Carousel(),
               const Divider(color: kCaptionColor),
               const SizedBox(height: 50.0),
-              // Divider(color: kCaptionColor),
               const CvSection(),
-              // IosAppAd(),
-              // SizedBox(
-              //   height: 70.0,
-              // ),
-              // WebsiteAd(),
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(vertical: 28.0),
-              //   child: PortfolioStats(),
-              // ),
-              // SizedBox(height: 25.0),
+
               const Divider(color: kCaptionColor),
               const SizedBox(height: 50.0),
               const ExperienceSection(),
@@ -103,10 +93,7 @@ class Home extends StatelessWidget {
               const Divider(color: kCaptionColor),
               const SizedBox(height: 50.0),
               const SkillSection(),
-              // SizedBox(
-              //   height: 50.0,
-              // ),
-              // Sponsors(),
+
               const SizedBox(
                 height: 50.0,
               ),

@@ -10,20 +10,24 @@ import '../../../utils/screen_helper.dart';
 List<Skill> skills = [
   Skill(
     skill: "Flutter",
-    percentage: 75,
+    percentage: 90,
   ),
   Skill(
     skill: "Dart",
+    percentage: 90,
+  ),
+  Skill(
+    skill: "Firebase",
     percentage: 75,
   ),
-  // Skill(
-  //   skill: "NodeJS",
-  //   percentage: 40,
-  // ),
-  // Skill(
-  //   skill: "Javascript",
-  //   percentage: 30,
-  // ),
+  Skill(
+    skill: "Restful APIs",
+    percentage: 90,
+  ),
+  Skill(
+    skill: "Version Control System (Git)",
+    percentage: 75,
+  ),
 ];
 
 class SkillSection extends StatelessWidget {
