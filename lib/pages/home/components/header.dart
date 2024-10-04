@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hussnain_potfolio/pages/home/home.dart';
 
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -14,17 +15,41 @@ import '../../../utils/screen_helper.dart';
 
 List<HeaderItem> headerItems = [
   HeaderItem(
-    title: "HOME",
-    onTap: () {},
+    title: "MY INTRO",
+    onTap: () {
+      scrollToSection(carouselKey);
+    },
   ),
-  HeaderItem(title: "MY INTRO", onTap: () {}),
-  HeaderItem(title: "SERVICES", onTap: () {}),
-  HeaderItem(title: "PORTFOLIO", onTap: () {}),
-  HeaderItem(title: "TESTIMONIALS", onTap: () {}),
-  HeaderItem(title: "BLOGS", onTap: () {}),
+  HeaderItem(
+      title: "RESUME",
+      onTap: () {
+        scrollToSection(cvSectionKey);
+      }),
+  HeaderItem(
+      title: "EXPERIENCE",
+      onTap: () {
+        scrollToSection(experienceSectionKey);
+      }),
+  HeaderItem(
+      title: "EDUCATION",
+      onTap: () {
+        scrollToSection(educationSectionKey);
+      }),
+  HeaderItem(
+      title: "SKILLS",
+      onTap: () {
+        scrollToSection(skillSectionKey);
+      }),
+  HeaderItem(
+      title: "PORTFOLIO",
+      onTap: () {
+        scrollToSection(sneakPeakKey);
+      }),
   HeaderItem(
     title: "HIRE ME",
-    onTap: () {},
+    onTap: () {
+      Globals.openUrl("https://www.linkedin.com/in/hussnain-ali-kaghzi/");
+    },
     isButton: true,
   ),
 ];
@@ -43,7 +68,7 @@ class HeaderLogo extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: "H",
+                  text: "HK",
                   style: GoogleFonts.oswald(
                     color: Colors.white,
                     fontSize: 32.0,

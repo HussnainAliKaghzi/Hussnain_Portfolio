@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hussnain_potfolio/utils/globals.dart';
 
 import '../../../models/carousel_item_model.dart';
 import '../../../utils/constants.dart';
@@ -84,7 +85,10 @@ List<CarouselItemModel> carouselItems = List.generate(
                 horizontal: 28.0,
               ),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Globals.openUrl(
+                      "https://www.linkedin.com/in/hussnain-ali-kaghzi/");
+                },
                 child: const Text(
                   "LET'S CONNECT",
                   style: TextStyle(

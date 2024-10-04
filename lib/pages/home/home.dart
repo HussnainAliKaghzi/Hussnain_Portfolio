@@ -12,14 +12,35 @@ import 'components/footer.dart';
 import 'components/header.dart';
 import 'components/skill_section.dart';
 
+final GlobalKey carouselKey = GlobalKey();
+final GlobalKey cvSectionKey = GlobalKey();
+final GlobalKey experienceSectionKey = GlobalKey();
+final GlobalKey educationSectionKey = GlobalKey();
+final GlobalKey skillSectionKey = GlobalKey();
+final GlobalKey sneakPeakKey = GlobalKey();
+
+final ScrollController _scrollController = ScrollController();
+void scrollToSection(GlobalKey key) {
+  final context = key.currentContext;
+  if (context != null) {
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+}
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       key: Globals.scaffoldKey,
       endDrawer: Drawer(
+        backgroundColor: Colors.white,
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -51,10 +72,18 @@ class Home extends StatelessWidget {
                         ),
                       )
                     : ListTile(
-                        title: Text(
-                          headerItems[index].title,
-                          style: const TextStyle(
-                            color: Colors.black,
+                        title: TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                            headerItems[index].onTap();
+                          },
+                          child: Text(
+                            headerItems[index].title,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 13.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       );
@@ -69,37 +98,38 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                child: const Header(),
-              ),
-              Carousel(),
-              const Divider(color: kCaptionColor),
-              const SizedBox(height: 50.0),
-              const CvSection(),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Header(),
+            Container(key: carouselKey, child: Carousel()),
+            const Divider(color: kCaptionColor),
+            const SizedBox(height: 50.0),
+            Container(key: cvSectionKey, child: const CvSection()),
 
-              const Divider(color: kCaptionColor),
-              const SizedBox(height: 50.0),
-              const ExperienceSection(),
-              const SizedBox(height: 50.0),
-              const Divider(color: kCaptionColor),
-              const SizedBox(height: 50.0),
-              const EducationSection(),
-              const SizedBox(height: 50.0),
-              const Divider(color: kCaptionColor),
-              const SizedBox(height: 50.0),
-              const SkillSection(),
+            const Divider(color: kCaptionColor),
+            const SizedBox(height: 50.0),
+            Container(
+                key: experienceSectionKey, child: const ExperienceSection()),
+            const SizedBox(height: 50.0),
+            const Divider(color: kCaptionColor),
+            const SizedBox(height: 50.0),
+            Container(
+                key: educationSectionKey, child: const EducationSection()),
+            const SizedBox(height: 50.0),
+            const Divider(color: kCaptionColor),
+            const SizedBox(height: 50.0),
+            Container(key: skillSectionKey, child: const SkillSection()),
 
-              const SizedBox(
-                height: 50.0,
-              ),
-              const Divider(color: kCaptionColor),
-              const SizedBox(height: 50.0),
-              Align(
+            const SizedBox(
+              height: 50.0,
+            ),
+            const Divider(color: kCaptionColor),
+            const SizedBox(height: 50.0),
+            Container(
+              key: sneakPeakKey,
+              child: Align(
                 alignment: Alignment.center,
                 child: Text(
                   "A SNEAK PEAK TO MY WORK",
@@ -111,13 +141,13 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
-              Image.asset("assets/SneakPeak.png"),
-              const SizedBox(height: 50.0),
-              // TestimonialWidget(),
-              const Divider(color: kCaptionColor),
-              const Footer(),
-            ],
-          ),
+            ),
+            Image.asset("assets/SneakPeak.png"),
+            const SizedBox(height: 50.0),
+            // TestimonialWidget(),
+            const Divider(color: kCaptionColor),
+            const Footer(),
+          ],
         ),
       ),
     );

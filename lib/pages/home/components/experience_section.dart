@@ -143,8 +143,7 @@ class ExperienceSection extends StatelessWidget {
                                 ),
                                 Text(
                                   education.description,
-                                  maxLines: 14,
-                                  overflow: TextOverflow.ellipsis,
+                                  // overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                     color: kCaptionColor,
                                     height: 1.5,
