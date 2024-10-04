@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/constants.dart';
@@ -19,7 +18,6 @@ final GlobalKey educationSectionKey = GlobalKey();
 final GlobalKey skillSectionKey = GlobalKey();
 final GlobalKey sneakPeakKey = GlobalKey();
 
-final ScrollController _scrollController = ScrollController();
 void scrollToSection(GlobalKey key) {
   final context = key.currentContext;
   if (context != null) {

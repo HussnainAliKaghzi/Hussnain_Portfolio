@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedImage extends StatefulWidget {
@@ -8,11 +7,11 @@ class AnimatedImage extends StatefulWidget {
   final int duration;
 
   const AnimatedImage({
-    Key? key,
+    super.key,
     required this.imageUrl,
     this.initialScale = 0.8,
     this.duration = 3,
-  }) : super(key: key);
+  });
 
   @override
   State<AnimatedImage> createState() => _AnimatedImageState();
