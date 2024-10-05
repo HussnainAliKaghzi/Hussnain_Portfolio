@@ -74,7 +74,7 @@ class CvSection extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Globals.openUrl(
-                      "https://drive.google.com/file/d/1DkSn5jouEnmKXr35J7MfMndQbF0NbdtY/view");
+                      "https://drive.google.com/file/d/1TnbMGJ7uckF6pyfsw6hJbrorfBQ8yfFB/view?usp=sharing");
                 },
                 child: MouseRegion(
                   cursor: SystemMouseCursors.click,
